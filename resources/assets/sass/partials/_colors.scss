@@ -1,0 +1,31 @@
+
+$themecolor: #117B94;
+$themecolor--light: #5C9FBB;
+$themecolor-1: #5F68BC;
+$themecolor-2: #BD6498;
+$themecolor-3: #5BBAB4;
+
+$green: #0ead0e;
+$red: #dc2f1a;
+
+.themecolor-1 { 
+	color: $themecolor-1 !important;
+}
+
+.themecolor-2 { 
+	color: $themecolor-2 !important;
+}
+
+.themecolor-3 { 
+	color: $themecolor-3 !important;
+}
+
+$bordergrey: 1px solid #DEDEDE;
+
+.error, .warning, .deny {
+	color: $red;
+}
+
+.succes, .accept {
+	color: $green;
+}

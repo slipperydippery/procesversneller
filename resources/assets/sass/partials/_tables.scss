@@ -1,0 +1,79 @@
+.table--container {
+	background: white;
+}
+
+.table {
+	background: white;
+	border: $bordergrey;
+	span.emphasis {
+		font-weight: 600;
+		color: $themecolor;
+	}
+}
+
+.row--table {
+	padding: .5rem 0;
+}
+
+.row--table:nth-of-type(2n) {
+	background: rgba(0,0,0,.05);
+}
+
+.table--instantie {
+	color: $themecolor--light;
+}
+
+.table--score {
+	color: $themecolor-2;
+	font-weight: 600;
+}
+
+.resultslider--container {
+	padding-top: 1.5rem;
+}
+
+.resultstable {
+	.resultstable--row {
+		padding: .5rem 0;
+	}
+	.resultstable--row:nth-child(2n) {
+		background: rgba(0,0,0,0.03);
+	}
+	.resultstable--row--head {
+		font-weight: 600;
+		color: $themecolor;
+	}
+	.resultstable--row--average {
+		border-top: 1px solid rgba(0,0,0,0.2);
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		background: rgba($themecolor, 0.1) !important;
+		font-weight: 600;
+		color: $themecolor;
+	}
+
+}
+
+.resultstable__measure {
+	margin-bottom: 6rem;
+}
+
+.searchitems {
+	margin: 0 0 4rem 0;
+}
+
+.kennisbank {
+	font-size: 1.8rem;
+	line-height: 3.2rem;
+}
+
+.table-header {
+	border-top: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	background: rgba($themecolor, 0.1) !important;
+	font-weight: 600;
+	color: $themecolor;
+}
+
+.row--empty {
+	background: rgba(69, 225, 127, 0.14) !important;
+}	

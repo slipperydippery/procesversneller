@@ -1,0 +1,193 @@
+.infoblock--container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;	
+	.infoblock--colcontainer {
+		.infoblock {
+			height: 90%;
+		}
+	}
+}
+
+.infoblock {
+	position: relative;
+	margin: 2rem 0;
+	border: 1px solid #DEDEDE;
+	background: white;
+	padding: 1rem 2rem;
+	img {
+		width: 100%;
+	}
+	span.highlight {
+		height: 9rem;
+		display: block;
+		font-size: 2rem;
+	}
+
+	.infoblock--padded {
+		padding: 2rem 0 1rem ;
+	}
+
+	span.primary {
+		
+	}
+
+	span.secondary {
+		
+	}
+
+	h4 {
+		color: $themecolor;
+		text-transform: uppercase;
+		text-align: left;
+		font-weight: 600;
+		font-size: 1.4rem;
+	}
+	span.beheerder {
+		font-size: 1rem;
+		height: auto;
+		float: left;
+		font-weight: 600;
+		padding-bottom: 1rem;
+		color: $themecolor-2;
+	}
+	span.logged {
+		font-size: 1rem;
+		height: auto;
+		float: right;
+		font-weight: 600;
+		padding-bottom: 1rem;
+	}
+	span.logged--in {
+		color: $green;
+	}
+	span.logged--out {
+		color: red;
+	}
+
+	.close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-size: 1.4rem;
+		color: $red;
+		opacity: 0.4;
+		z-index: 100;
+		transition: all .5s;
+	}
+	.close:hover {
+		opacity: 1;
+	}
+
+	span.infoblock--name {
+		// display: inline-block;
+		// height: 1rem;
+		// overflow: hidden;
+	}
+}
+
+.content--fullwidthback {
+	background: #efefef;
+	width: 100vw;
+}
+
+.rowicons {
+}
+
+img.rowicon {
+	float: right;
+	height: 2rem !important;
+	width: 2rem !important; 
+    margin-left: .5rem !important;
+}
+
+.autoscroll {
+	overflow-y: auto !important;
+}
+
+.hidden--container:hover .hidden--item {
+	opacity: 1;
+}
+
+.hidden--item {
+	opacity: 0;
+	transition: all .5s;
+}
+
+.icon {
+	width: 3rem;
+	height: 3rem;
+}
+
+h2 .icon {
+	height: 2rem;
+	width: 2rem;
+}
+
+p .icon {
+	height: 1.4rem;
+	width: 1.4rem;
+}
+
+span.center {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+iframe.iframe--monitor {
+	margin: 5rem 0;
+}
+
+textarea {
+	overflow-x: hidden;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+button.deletebutton {
+	background: $red;
+}		
+
+.no-overflow {
+	overflow: hidden;
+	div {
+		padding: 0;
+	}
+}
+
+
+
+span.selectable {
+	display: inline-block;
+	padding: .5rem 1rem;
+	color: black;
+	transition: all .5s;
+}
+
+span.selectable--active {
+	background: rgba($green, 0.4);
+	margin: .5rem;
+}
+span.selectable--active:hover {
+	background: rgba($green, 0.6);
+}
+
+span.selectable--passive {
+	background: rgba($red, 0.4);
+	margin: .5rem;
+}
+span.selectable--passive:hover {
+	background: rgba($red, 0.6);
+}
+
+.right {
+	float: right;
+}
+
+p.scandate {
+	border: 1px solid red;
+	padding: .5rem 1rem;
+}

@@ -1,0 +1,76 @@
+button, .btn {
+	background: $themecolor;
+	border: none;
+	color: white;
+	padding: 1rem 3rem;
+	border-radius: 4px;
+	font-size: 1.6rem;
+	transition: all .2s;
+	.hovershow {
+		display: none;
+		margin: 0 3rem;
+	}
+}
+
+button:hover, .btn:hover, button:focus, .btn:focus {
+	color: white;
+    // box-shadow: inset 0px 0px 5px black;
+    background: darken($themecolor, 10);
+    text-decoration: none !important; 
+    .hovershow {
+    	display: inline-block;
+    }
+}
+
+// button:hover .hovershow, .btn:hover .hovershow {
+// 	display: initial;
+// }
+
+.btn--fullwidth {
+	width: 100%;
+	text-align: left;
+}
+
+.btn--secondary {
+	background: $themecolor-2;
+}
+
+.btn--secondary:hover, .btn--secondary:focus {
+	background: darken($themecolor-2, 10) !important;
+}
+
+.btn--tertiary {
+	background: $themecolor-3;
+}
+
+.mainbutton {
+	font-size: 2.5rem;
+}
+
+.themebutton {
+	width: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-transform: uppercase;
+}
+
+.btn--delete, .btn--alert {
+	background: $red;
+}
+
+.topright {
+	float: right;
+    margin-top: -4rem;
+    margin-right: -4rem;
+    padding: 0.7rem;
+    border-radius: 0;
+}
+
+button.alert {
+	background: $red;
+}
+
+.btn--small {
+    padding: 0.5rem 1.7rem;
+    font-size: 1.4rem;
+}

@@ -1,0 +1,65 @@
+.content--welcome {
+	text-align:center;
+	overflow: hidden;
+	.container {
+		margin: 0 auto;
+	}
+	section {
+		margin: 0 auto 2rem;;
+	}
+}
+
+h1.title {
+    margin-top: 6rem;
+	font-size: 6rem;
+
+	span.title--participatie {
+		color: black;
+	}
+
+	span.title--dot {
+		font-size: 12rem;
+		line-height: 6rem;
+		color: $themecolor;
+	}
+
+	span.title--scan {
+		color: #5E5E5E;
+	}
+}
+
+h2.subtitle {
+	color: #666666;
+	font-size: 3.2rem;
+}
+
+
+.featuredimg--container {
+	position: relative;
+	margin: 4rem 0 0;
+	img.featuredimg {
+		margin: 2rem 0 0 0;
+		clear: both;
+		width: 100%;
+	}
+	.mainbutton--container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		.mainbutton {
+			margin: 0 auto;
+		}
+	}
+}
+
+.welcome--textblock--container {
+	text-align: left;
+	margin-bottom: 10rem;
+	.welcome--textblock {
+		padding: 2rem;
+		h3 {
+			color: $themecolor;
+		}
+	}
+}

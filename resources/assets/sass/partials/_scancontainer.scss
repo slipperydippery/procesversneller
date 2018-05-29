@@ -1,0 +1,48 @@
+.scan--container {
+	display: flex;
+	flex-flow: column nowrap;
+	position: relative;
+	height: 100%;
+	flex-grow: 1;
+}
+
+.scan--theme {
+	flex-grow: 1;
+	min-height: 481px;
+}
+
+h2.theme--head{
+	span.theme--head--number {
+		color: #666666;
+	}
+	span.theme--head--title {
+		color: black;
+	}
+}
+
+h3.question--head {
+	span.question--head--number {
+		color: black;
+	}
+	span.question--head--title {
+		color: black;
+	}
+}
+
+.questionbody {
+	font-size: 3rem;
+}
+
+.question--answer {
+	display: block;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.question--answer__preanswer {
+	color: rgba(0,0,0,0.4);
+}
+
+button.nextquestion {
+	float: right;
+}

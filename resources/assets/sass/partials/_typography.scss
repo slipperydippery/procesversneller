@@ -1,0 +1,34 @@
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+label {
+	color: $themecolor;
+}
+
+.fineprint {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 1.3rem;
+}
+.fineprint--welcome {
+    margin-top: 1rem;
+    color: $themecolor-2;
+    text-style: italic;
+    font-size: 1.5rem;
+}
+
+h1.pagetitle {
+	// margin-top: 0;
+}
+
+h5 {
+    font-size: 1.7rem;
+}

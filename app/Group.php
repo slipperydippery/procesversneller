@@ -12,21 +12,21 @@ class Group extends Model
 
     public function scans()
     {
-        return $this->hasMany('App\Scan');
+        return $this->hasMany(\App\Scan::class);
     }
 
     public function owner()
     {
-        return $this->belongsTo('App\Scan', 'scan_id');
+        return $this->belongsTo(\App\Scan::class, 'scan_id');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(\App\User::class);
     }
 
     public function grouprequests()
     {
-        return $this->hasMany('App\Grouprequest');
+        return $this->hasMany(\App\Grouprequest::class);
     }
 }

@@ -32,22 +32,22 @@ class User extends Authenticatable
 
     public function scans()
     {
-        return $this->hasMany('App\Scan');
+        return $this->hasMany(\App\Scan::class);
     }
 
     public function groups()
     {
-        return $this->hasMany('App\Group');
+        return $this->hasMany(\App\Group::class);
     }
 
     public function dashmessages()
     {
-        return $this->hasMany('App\Dashmessage');
+        return $this->hasMany(\App\Dashmessage::class);
     }
 
     public function measures()
     {
-        return $this->belongsToMany('App\Measure');
+        return $this->belongsToMany(\App\Measure::class);
     }
 
     public function isOnline()

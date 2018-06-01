@@ -13,11 +13,11 @@ class Comparison extends Model
     // parentscan
     public function comparer()
     {
-        return $this->belongsTo('\App\Scan', 'scan_id');
+        return $this->belongsTo(\App\Scan::class, 'scan_id');
     }
 
     public function compared()
     {
-        return $this->belongsTo('App\Scan', 'comparison_id');
+        return $this->belongsTo(\App\Scan::class, 'comparison_id');
     }
 }

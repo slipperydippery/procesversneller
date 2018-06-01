@@ -12,16 +12,16 @@ class Measure extends Model
 
     public function scan()
     {
-        return $this->belongsTo('App\Scan');
+        return $this->belongsTo(\App\Scan::class);
     }
 
     public function question()
     {
-        return $this->belongsTo('App\Question');
+        return $this->belongsTo(\App\Question::class);
     }
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(\App\User::class);
     }
 }

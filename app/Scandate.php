@@ -12,6 +12,6 @@ class Scandate extends Model
 
     public function scan()
     {
-        $this->belongsTo('App\Scan');
+        $this->belongsTo(\App\Scan::class);
     }
 }

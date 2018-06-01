@@ -12,11 +12,11 @@ class District extends Model
 
     public function scanmodel()
     {
-        return $this->belongsTo('App\Scanmodel');
+        return $this->belongsTo(\App\Scanmodel::class);
     }
 
     public function scans()
     {
-        return $this->belongsToMany('App\Scan');
+        return $this->belongsToMany(\App\Scan::class);
     }
 }

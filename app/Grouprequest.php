@@ -12,11 +12,11 @@ class Grouprequest extends Model
 
     public function scan()
     {
-        return $this->belongsTo('App\Scan');
+        return $this->belongsTo(\App\Scan::class);
     }
 
     public function group()
     {
-        return $this->belongsTo('App\Group');
+        return $this->belongsTo(\App\Group::class);
     }
 }

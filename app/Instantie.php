@@ -12,11 +12,11 @@ class Instantie extends Model
 
     public function scans()
     {
-        return $this->hasMany('App\Scan');
+        return $this->hasMany(\App\Scan::class);
     }
 
     public function scanmodel()
     {
-        return $this->belongsTo('App\Scan');
+        return $this->belongsTo(\App\Scan::class);
     }
 }

@@ -20,72 +20,72 @@ class Scan extends Model
 
     public function scanmodel()
     {
-        return $this->belongsTo('App\Scanmodel');
+        return $this->belongsTo(\App\Scanmodel::class);
     }
 
     public function answers()
     {
-        return $this->hasMany('App\Answer');
+        return $this->hasMany(\App\Answer::class);
     }
 
     public function group()
     {
-        return $this->belongsTo('App\Group');
+        return $this->belongsTo(\App\Group::class);
     }
 
     public function owns()
     {
-        return $this->hasOne('App\Group');
+        return $this->hasOne(\App\Group::class);
     }
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(\App\User::class);
     }
 
     public function grouprequest()
     {
-        return $this->hasOne('App\Grouprequest');
+        return $this->hasOne(\App\Grouprequest::class);
     }
 
     public function instantie()
     {
-        return $this->belongsTo('App\Instantie');
+        return $this->belongsTo(\App\Instantie::class);
     }
 
     public function measures()
     {
-        return $this->hasMany('App\Measure');
+        return $this->hasMany(\App\Measure::class);
     }
 
     public function districts()
     {
-        return $this->belongsToMany('App\District');
+        return $this->belongsToMany(\App\District::class);
     }
 
     public function comparisonscans()
     {
-        return $this->belongsToMany('App\Scan', 'comparisons', 'scan_id', 'comparison_id')->withTimestamps();
+        return $this->belongsToMany(\App\Scan::class, 'comparisons', 'scan_id', 'comparison_id')->withTimestamps();
     }
 
     public function iscomparedby()
     {
-        return $this->belongsToMany('App\Scan', 'comparisons', 'comparison_id', 'scan_id');
+        return $this->belongsToMany(\App\Scan::class, 'comparisons', 'comparison_id', 'scan_id');
     }
 
     public function comparisons()
     {
-        return $this->hasMany('App\Comparison');
+        return $this->hasMany(\App\Comparison::class);
     }
 
     public function scandate()
     {
-        return $this->hasOne('App\Scandate');
+        return $this->hasOne(\App\Scandate::class);
     }
 
     public function followup()
     {
-        return $this->hasOne('App\Followup');
+        return $this->hasOne(\App\Followup::class);
     }
 
     public static function registerWithGroup(User $user, Group $group, $attributes)

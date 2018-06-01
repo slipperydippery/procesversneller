@@ -12,16 +12,16 @@ class Question extends Model
 
     public function theme()
     {
-        return $this->belongsTo('App\Theme');
+        return $this->belongsTo(\App\Theme::class);
     }
 
     public function answers()
     {
-        return $this->hasMany('App\Answer');
+        return $this->hasMany(\App\Answer::class);
     }
 
     public function measures()
     {
-        return $this->hasMany('App\Measure');
+        return $this->hasMany(\App\Measure::class);
     }
 }

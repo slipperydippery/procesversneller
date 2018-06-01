@@ -20,7 +20,7 @@ class CreateCompareScanTable extends Migration
             $table->foreign('scan_id')->references('id')->on('scans');
             $table->foreign('compare_id')->references('id')->on('scans');
 
-            $table->primary(array('scan_id', 'compare_id'));
+            $table->primary(['scan_id', 'compare_id']);
         });
     }
 

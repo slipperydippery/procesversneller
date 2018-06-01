@@ -20,7 +20,7 @@ class CreateDistrictScanTable extends Migration
             $table->foreign('scan_id')->references('id')->on('scans');
             $table->foreign('district_id')->references('id')->on('districts');
 
-            $table->primary(array('scan_id', 'district_id'));
+            $table->primary(['scan_id', 'district_id']);
         });
     }
 

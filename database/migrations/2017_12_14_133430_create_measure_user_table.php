@@ -20,7 +20,7 @@ class CreateMeasureUserTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('measure_id')->references('id')->on('measures');
 
-            $table->primary(array('user_id', 'measure_id'));
+            $table->primary(['user_id', 'measure_id']);
         });
     }
 

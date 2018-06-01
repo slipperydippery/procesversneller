@@ -32,13 +32,14 @@ Route::get('/scan/{scan}/measureresults', 'ScanPagesController@measureresults')-
 Route::post('/scan/{scan}/commitdatetime', 'ScanPagesController@commitdatetime')->name('scan.commitdatetime');
 
 // PagesController
-Route::get('/', 'PagesController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PagesController@welcome')->name('welcome');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/partijen', 'PagesController@partijen')->name('partijen');
+Route::get('/pmonitor', 'PagesController@pmonitor')->name('pmonitor');
 Route::get('/startscan', 'PagesController@startscan')->name('startscan');
 Route::get('/kennisbank', 'PagesController@kennisbank')->name('kennisbank');
-Route::get('/instructiefilms', 'PagesController@instructiefilms')->name('instructiefilms');
-Route::get('/pmonitor', 'PagesController@pmonitor')->name('pmonitor');
 Route::get('/grouprequested', 'PagesController@grouprequested')->name('grouprequested');
-Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/instructiefilms', 'PagesController@instructiefilms')->name('instructiefilms');
 Route::get('/overzichtresultaten', 'AdminpagesController@overzichtresultaten')->name('overzichtresultaten')->middleware('auth');
 

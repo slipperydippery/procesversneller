@@ -18,9 +18,8 @@ class PagesController extends Controller
         if(Auth::check()){
             return redirect()->route('home');
         }
-    	$scanmodel = Scanmodel::with('themes.questions')->findOrFail(1);
 
-    	return view('welcome', compact('scanmodel'));
+    	return view('welcome');
     }
 
     public function startscan()
@@ -56,5 +55,10 @@ class PagesController extends Controller
     public function contact()
     {
         return view('pages.contact');
+    }
+
+    public function partijen()
+    {
+        return view('pages.partijen');
     }
 }

@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     protected $fillable = [
-    	'title', 'scan_id', 'user_id', 'code'
+        'title', 'scan_id', 'user_id', 'code'
     ];
 
     public function scans()
     {
-    	return $this->hasMany('App\Scan');
+        return $this->hasMany('App\Scan');
     }
 
     public function owner()
@@ -27,6 +27,6 @@ class Group extends Model
 
     public function grouprequests()
     {
-    	return $this->hasMany('App\Grouprequest');
+        return $this->hasMany('App\Grouprequest');
     }
 }

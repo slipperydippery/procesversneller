@@ -19,9 +19,9 @@ class ComparisonsController extends Controller
 
     public function index()
     {
-    	$user = Auth::user();
-    	$districts = District::get();
-    	$instanties = Instantie::get();
-    	return view ('compare.comparescans', compact('user', 'districts', 'instanties'));
+        $user = Auth::user();
+        $districts = District::get();
+        $instanties = Instantie::get();
+        return view('compare.comparescans', compact('user', 'districts', 'instanties'));
     }
 }

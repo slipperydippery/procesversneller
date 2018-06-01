@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comparison extends Model
 {
-	protected $fillable = [
-		'scan_id', 'comparison_id'
-	];
+    protected $fillable = [
+        'scan_id', 'comparison_id'
+    ];
 
-	// parentscan
+    // parentscan
     public function comparer()
     {
-    	return $this->belongsTo('\App\Scan', 'scan_id');
+        return $this->belongsTo('\App\Scan', 'scan_id');
     }
 
     public function compared()
     {
-    	return $this->belongsTo('App\Scan', 'comparison_id');
+        return $this->belongsTo('App\Scan', 'comparison_id');
     }
 }

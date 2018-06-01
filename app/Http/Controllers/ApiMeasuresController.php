@@ -73,7 +73,7 @@ class ApiMeasuresController extends Controller
         $measure->measure = $request->measure['measure'];
         $measure->active = $request->measure['active'];
         $measure->save();
-        return $measure;        
+        return $measure;
     }
 
     /**

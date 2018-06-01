@@ -13,7 +13,7 @@ class ChangeUsersLogincount extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
+        Schema::table('users', function ($table) {
             $table->integer('logincount')->unsigned()->default(0)->change();
         });
     }

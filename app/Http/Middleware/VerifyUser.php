@@ -16,7 +16,7 @@ class VerifyUser
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->id != $request->route('user')->id) {
+        if (Auth::user()->id != $request->route('user')->id) {
             return response('Je hebt geen toegang tot deze scan', 401);
         }
         

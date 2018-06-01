@@ -8,11 +8,11 @@ class Theme extends Model
 {
     public function questions()
     {
-    	return $this->hasMany('App\Question');
+        return $this->hasMany('App\Question');
     }
 
     public function scanmodels()
     {
-    	return $this->belongsTo('App\Scanmodel');
+        return $this->belongsTo('App\Scanmodel');
     }
 }

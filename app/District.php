@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class District extends Model
 {
-	protected $fillable = [
-		'scanmodel_id', 'title'
-	];
+    protected $fillable = [
+        'scanmodel_id', 'title'
+    ];
 
     public function scanmodel()
     {
-    	return $this->belongsTo('App\Scanmodel');
+        return $this->belongsTo('App\Scanmodel');
     }
 
     public function scans()
     {
-    	return $this->belongsToMany('App\Scan');
+        return $this->belongsToMany('App\Scan');
     }
 }

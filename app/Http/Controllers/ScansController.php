@@ -64,7 +64,7 @@ class ScansController extends Controller
 
         $grouprequest =  false;
 
-        if($request->has('group_bool')) {
+        if ($request->has('group_bool')) {
             $group = Group::findOrFail($request->group_id);
             $grouprequest = $group;
             //  send a message to group owner
@@ -85,16 +85,16 @@ class ScansController extends Controller
      */
     public function show(Scan $scan)
     {
-        if($scan->algemeenbeeld) {
+        if ($scan->algemeenbeeld) {
             $answercount = 0;
             $questioncount = 0;
-            foreach($scan->answers as $answer) {
-                if($answer->answer) {
+            foreach ($scan->answers as $answer) {
+                if ($answer->answer) {
                     $answercount++;
                 }
                 $questioncount++;
             }
-            if($answercount == $questioncount){
+            if ($answercount == $questioncount) {
                 return redirect()->route('scan.complete', compact('scan'));
             }
         }
@@ -156,6 +156,6 @@ class ScansController extends Controller
         // $scan->comparisons()->delete();
         $scan->districts()->detach();
         $scan->delete();
-        return redirect()->route('home');   
+        return redirect()->route('home');
     }
 }

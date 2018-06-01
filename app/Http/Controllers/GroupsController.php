@@ -37,10 +37,10 @@ class GroupsController extends Controller
 
     public function createscan(Group $group, $code)
     {
-        if($code == $group->code) {
+        if ($code == $group->code) {
             $instanties = Instantie::get();
             return view('group.createscan', compact('group', 'instanties'));
-        } 
+        }
         return view('welcome');
     }
 
@@ -63,14 +63,14 @@ class GroupsController extends Controller
         $group->save();
         $group->scans()->save($scan);
  
-        foreach($request['districts'] as $district) {
+        foreach ($request['districts'] as $district) {
             $district = District::find($district['id']);
             $group->districts()->attach($district);
         }
 
         $scanmodel = Scanmodel::findOrFail(1);
-        foreach($scanmodel->themes as $theme) {
-            foreach($theme->questions as $question) {
+        foreach ($scanmodel->themes as $theme) {
+            foreach ($theme->questions as $question) {
                 Measure::create([
                     'group_id' => $group->id,
                     'question_id' => $question->id

@@ -70,7 +70,7 @@ class ApiScandateController extends Controller
      */
     public function update(Scan $scan, Request $request)
     {
-        if($scan->scandate){
+        if ($scan->scandate) {
             $scan->scandate->date = $request->date;
             $scan->scandate->save();
             return $scan->scandate;

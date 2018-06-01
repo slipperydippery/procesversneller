@@ -35,14 +35,14 @@ class ApiScansController extends Controller
         return Scan::with('comparisons.compared.user', 'comparisons.compared.answers', 'comparisons.compared.instantie', 'comparisons.compared.districts', 'group.scans')->where('user_id', $user->id)->get();
     }
 
-	public function show(Scan $scan)
-	{
+    public function show(Scan $scan)
+    {
         return Scan::with('answers', 'user', 'instantie', 'measures', 'districts')->findOrFail($scan->id);
-	}
+    }
 
     public function store(Request $request)
-    {        
-        if($request->isgroup) {
+    {
+        if ($request->isgroup) {
             request()->validate([
                 'isgroup' => 'required|boolean',
                 'selectedgroup' => 'required|integer',
@@ -59,7 +59,7 @@ class ApiScansController extends Controller
 
         $user = Auth::user();
 
-        if($request->isgroup) {
+        if ($request->isgroup) {
             $group = Group::find($request->selectedgroup);
             $scan = Scan::registerWithGroup($user, $group, $request->all());
         } else {
@@ -67,7 +67,7 @@ class ApiScansController extends Controller
         }
 
         // $grouprequest =  false;
-        if($request->isgroup) {
+        if ($request->isgroup) {
             // $grouprequest = $group;
             $grouprequest = Grouprequest::create([
                 'group_id' => $group->id,
@@ -80,49 +80,49 @@ class ApiScansController extends Controller
         return $scan;
     }
 
-	public function update(Request $request)
-	{
-		$scan = Scan::findOrFail($request->scan['id']);
-		$scan->title = $request->scan['title'];
-		$scan->description = $request->scan['description'];
+    public function update(Request $request)
+    {
+        $scan = Scan::findOrFail($request->scan['id']);
+        $scan->title = $request->scan['title'];
+        $scan->description = $request->scan['description'];
         $scan->algemeenbeeld = $request->scan['algemeenbeeld'];
-		$scan->group_id = $request->scan['group_id'];
-		$scan->save();
-		return $request;
-	}
+        $scan->group_id = $request->scan['group_id'];
+        $scan->save();
+        return $request;
+    }
 
     public function indexthemes(Scan $scan)
     {
-    	return $scan->scanmodel->themes->with('questions')->get();
+        return $scan->scanmodel->themes->with('questions')->get();
     }
 
     public function indexquestions(Scan $scan, Theme $theme)
     {
-    	return $theme->questions;
+        return $theme->questions;
     }
 
     public function indexanswers(Scan $scan)
     {
-    	return $scan->answers;
+        return $scan->answers;
     }
 
     public function storewithanswers(Request $request, Scan $scan)
     {
-    	// foreach($request->body as $answer){
-    	// 	return $answer;
-    	// }
-    	return $request->body->answers;
-    	return $request->body;
+        // foreach($request->body as $answer){
+        // 	return $answer;
+        // }
+        return $request->body->answers;
+        return $request->body;
     }
 
     public function postanswer(Request $request, Scan $scan)
     {
-    	return $request;
+        return $request;
     }
 
     public function getuser(Scan $scan)
     {
-    	return $scan->user->get();
+        return $scan->user->get();
     }
 
     public function getdistricts(Scan $scan)
@@ -134,5 +134,4 @@ class ApiScansController extends Controller
     {
         $scan->districts()->sync($request['districts']);
     }
-
 }

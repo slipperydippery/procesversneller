@@ -20,26 +20,26 @@ class ScanPagesController extends Controller
         $this->middleware('owner', ['except' => ['loggless', 'measureresults']]);
     }
 
-	public function loggless()
-	{
-		if(Scan::find(1)){
-			return redirect()->route('scan.show', Scan::find(1));
-		} else {
-			$user = User::find(1);
-			$attributes = [
-				"title" => "Testscan",
-				"description" => null,
-				"instantie_id" => "6",
-				"districts" => [],
-				"scanmodel_id" => "1",
-				"activetheme" => "1",
-				"activequestion" => "1"
-			];
-	        $scan = Scan::register($user, $attributes);
-		}
+    public function loggless()
+    {
+        if (Scan::find(1)) {
+            return redirect()->route('scan.show', Scan::find(1));
+        } else {
+            $user = User::find(1);
+            $attributes = [
+                "title" => "Testscan",
+                "description" => null,
+                "instantie_id" => "6",
+                "districts" => [],
+                "scanmodel_id" => "1",
+                "activetheme" => "1",
+                "activequestion" => "1"
+            ];
+            $scan = Scan::register($user, $attributes);
+        }
 
         return redirect()->route('scan.show', Scan::find(1));
-	}
+    }
 
     public function startscan(Scan $scan)
     {
@@ -51,27 +51,27 @@ class ScanPagesController extends Controller
     public function kennismaken(Scan $scan)
     {
         $group = $scan->group;
-    	if(Auth::check() && $scan->group) {
-    		return view('scan.kennismaken', compact('scan', 'group'));
-    	} else {
-    		return redirect()->route('scan.regioincijfers', $scan);
-    	}
+        if (Auth::check() && $scan->group) {
+            return view('scan.kennismaken', compact('scan', 'group'));
+        } else {
+            return redirect()->route('scan.regioincijfers', $scan);
+        }
     }
 
-    public function regioincijfers (Scan $scan)
+    public function regioincijfers(Scan $scan)
     {
-    	return view('scan.regioincijfers', compact('scan'));
+        return view('scan.regioincijfers', compact('scan'));
     }
 
     public function algemeenbeeld(Scan $scan)
     {
-    	return view('scan.algemeenbeeld', compact('scan'));
+        return view('scan.algemeenbeeld', compact('scan'));
     }
 
     public function algemeenbeeldresultaten(Scan $scan)
     {
         $scanmodel = $scan->scanmodel->with('themes.questions')->first();
-        if($scan->group_id) {
+        if ($scan->group_id) {
             AlgemeenbeeldUpdated::dispatch($scan->group_id);
         }
         return view('scan.algemeenbeeldresultaten', compact('scan', 'scanmodel'));
@@ -92,14 +92,14 @@ class ScanPagesController extends Controller
     }
 
     public function calendar(Scan $scan)
-    {   
+    {
 
-        if((! $scan->group) || (! Auth::user() == $scan->group->user )){
+        if ((! $scan->group) || (! Auth::user() == $scan->group->user )) {
             return view('scan.complete', compact('scan'));
         }
-        if($scan->scandate){
+        if ($scan->scandate) {
             $scan = Scan::with('scandate')->find($scan->id);
-        } 
+        }
         return view('scan.calendar', compact('scan', 'scandate'));
     }
 
@@ -110,8 +110,8 @@ class ScanPagesController extends Controller
 
     public function emailresults(Scan $scan)
     {
-        $user = Auth::user();   
-        if($scan->group){
+        $user = Auth::user();
+        if ($scan->group) {
             $mailscan = $scan->group->owner;
         } else {
             $mailscan = $scan;
@@ -136,7 +136,7 @@ class ScanPagesController extends Controller
     public function measureresults(Scan $scan)
     {
         $measurescan = $scan;
-        if($scan->group){
+        if ($scan->group) {
             $measurescan = $scan->group->owner;
         }
         return view('scan.measureresults', compact('scan', 'measurescan'));
@@ -148,7 +148,7 @@ class ScanPagesController extends Controller
             'date' => 'required|date',
             'time' => 'required',
         ]);
-        if($scan->followup){
+        if ($scan->followup) {
             $scan->followup->date = $request->date;
             $scan->followup->time = $request->time;
             $scan->followup->save();

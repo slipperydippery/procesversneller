@@ -42,4 +42,3 @@ Route::get('/kennisbank', 'PagesController@kennisbank')->name('kennisbank');
 Route::get('/grouprequested', 'PagesController@grouprequested')->name('grouprequested');
 Route::get('/instructiefilms', 'PagesController@instructiefilms')->name('instructiefilms');
 Route::get('/overzichtresultaten', 'AdminpagesController@overzichtresultaten')->name('overzichtresultaten')->middleware('auth');
-

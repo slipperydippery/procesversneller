@@ -15,21 +15,21 @@ class PagesController extends Controller
 {
     public function welcome()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             return redirect()->route('home');
         }
 
-    	return view('welcome');
+        return view('welcome');
     }
 
     public function startscan()
     {
-    	if(Auth::check()){
-    		return redirect()->route('scan.index');
-    	}
-    	// Page with: log in / register
-    	//               trial scan
-    	return view('pages.startscan');
+        if (Auth::check()) {
+            return redirect()->route('scan.index');
+        }
+        // Page with: log in / register
+        //               trial scan
+        return view('pages.startscan');
     }
 
     public function instructiefilms()

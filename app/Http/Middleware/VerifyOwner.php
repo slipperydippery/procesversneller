@@ -19,15 +19,14 @@ class VerifyOwner
     {
         $scanid = $request->route('scan')->id;
         $scan = Scan::findOrFail($scanid);
-        if($scanid != 1) {
-            if(Auth::guest()){
+        if ($scanid != 1) {
+            if (Auth::guest()) {
                 return redirect()->guest('login');
             } else {
-                if(Auth::user()->id != $scan->user->id) {
+                if (Auth::user()->id != $scan->user->id) {
                     return response('Je hebt geen toegang tot deze scan', 401);
                 }
             }
-            
         }
         return $next($request);
     }

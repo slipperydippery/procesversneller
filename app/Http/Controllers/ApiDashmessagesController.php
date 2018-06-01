@@ -10,12 +10,12 @@ class ApiDashmessagesController extends Controller
 {
     public function index(User $user)
     {
-    	return $user->dashmessages;
+        return $user->dashmessages;
     }
 
     public function delete(Dashmessage $dashmessage)
     {
-    	$dashmessage->delete();
-    	return ('deleted');
+        $dashmessage->delete();
+        return ('deleted');
     }
 }

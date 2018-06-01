@@ -19,10 +19,10 @@ class VerifyGroupOwner
     {
         $groupid = $request->route('group')->id;
         $group = Group::findOrFail($groupid);
-        if(Auth::guest()){
+        if (Auth::guest()) {
             return redirect()->guest('login');
         } else {
-            if(Auth::user()->id != $group->user->id) {
+            if (Auth::user()->id != $group->user->id) {
                 return response('Je hebt geen toegang tot deze group', 401);
             }
         }

@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-	protected $fillable = [
-		'title', 'body', 'weergave_succesfactor', 'norm', 'them_id'
-	];
+    protected $fillable = [
+        'title', 'body', 'weergave_succesfactor', 'norm', 'them_id'
+    ];
 
     public function theme()
     {
-    	return $this->belongsTo('App\Theme');
+        return $this->belongsTo('App\Theme');
     }
 
     public function answers()
     {
-    	return $this->hasMany('App\Answer');
+        return $this->hasMany('App\Answer');
     }
 
     public function measures()
     {
-    	return $this->hasMany('App\Measure');
+        return $this->hasMany('App\Measure');
     }
 }

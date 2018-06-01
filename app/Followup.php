@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Followup extends Model
 {
     protected $fillable = [
-    	'date', 'time', 'scan_id'
+        'date', 'time', 'scan_id'
     ];
 }

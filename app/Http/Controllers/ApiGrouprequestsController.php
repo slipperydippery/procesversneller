@@ -34,7 +34,7 @@ class ApiGrouprequestsController extends Controller
         $dashmessage = Dashmessage::create([
             'message' => 'Je aanvraag om mee te doen aan de groep <i>' . $group->title . '</i> geaccepteerd!.',
             'user_id' =>  $user_id,
-        ]); 
+        ]);
         DashmessageUpdate::dispatch($dashmessage, $user_id);
 
         dispatch(new SendGroupacceptedEmail($scan->user, $group));
@@ -50,7 +50,7 @@ class ApiGrouprequestsController extends Controller
         $dashmessage = Dashmessage::create([
             'message' => 'Helaas is je aanvraag om mee te doen aan de groep <i>' . $group->title . '</i> geweigerd.',
             'user_id' =>  $user_id,
-        ]);        
+        ]);
         DashmessageUpdate::dispatch($dashmessage, $user_id);
 
         $user = $scan->user;
@@ -60,5 +60,4 @@ class ApiGrouprequestsController extends Controller
 
         return 'denied';
     }
-
 }

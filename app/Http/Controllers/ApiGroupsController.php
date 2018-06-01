@@ -30,7 +30,7 @@ class ApiGroupsController extends Controller
     public function indexusers(Group $group)
     {
         $users = [];
-        foreach($group->scans as $scan) {
+        foreach ($group->scans as $scan) {
             array_push($users, $scan->user);
         }
         return $users;
@@ -163,4 +163,3 @@ class ApiGroupsController extends Controller
         return $group->id;
     }
 }
-    

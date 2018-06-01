@@ -20,17 +20,17 @@ class Scan extends Model
 
     public function scanmodel()
     {
-    	return $this->belongsTo('App\Scanmodel');
+        return $this->belongsTo('App\Scanmodel');
     }
 
     public function answers()
     {
-    	return $this->hasMany('App\Answer');
+        return $this->hasMany('App\Answer');
     }
 
     public function group()
     {
-    	return $this->belongsTo('App\Group');
+        return $this->belongsTo('App\Group');
     }
 
     public function owns()
@@ -40,17 +40,17 @@ class Scan extends Model
 
     public function user()
     {
-    	return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function grouprequest()
     {
-    	return $this->hasOne('App\Grouprequest');
+        return $this->hasOne('App\Grouprequest');
     }
 
     public function instantie()
     {
-    	return $this->belongsTo('App\Instantie');
+        return $this->belongsTo('App\Instantie');
     }
 
     public function measures()
@@ -106,7 +106,7 @@ class Scan extends Model
         $scan = new Scan($attributes);
         $user->scans()->save($scan);
 
-        foreach($attributes['districts'] as $district) {
+        foreach ($attributes['districts'] as $district) {
             $district = District::find($district['id']);
             $scan->districts()->attach($district);
         }
@@ -119,8 +119,8 @@ class Scan extends Model
 
     public function generateQuestions(Scan $scan)
     {
-        foreach($scan->scanmodel->themes as $theme) {
-            foreach($theme->questions as $question) {
+        foreach ($scan->scanmodel->themes as $theme) {
+            foreach ($theme->questions as $question) {
                 Answer::create([
                     'scan_id' => $scan->id,
                     'question_id' => $question->id

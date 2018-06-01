@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dashmessage extends Model
 {
-	protected $fillable = [
-		'message', 'user_id'
-	];
+    protected $fillable = [
+        'message', 'user_id'
+    ];
 
     public function user()
     {
-    	return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 }

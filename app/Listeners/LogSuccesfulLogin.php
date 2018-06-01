@@ -4,7 +4,7 @@ namespace App\Listeners;
 
 use Auth;
 use Illuminate\Auth\Events\Login;
-use Illuminate\Contracts\Logging\Log;
+use Psr\Log\LoggerInterface;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
